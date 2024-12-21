@@ -90,7 +90,6 @@ Testing completed
 ## Лістинг функції з використанням деструктивного підходу
 ```lisp
 (defun iterative-shell-sort (lst)
-  "Sorts a list using an iterative implementation of Shell sort."
   (let ((working-list (copy-list lst))
         (gap (floor (/ (length lst) 2))))
     (loop while (>= gap 1) do
@@ -109,7 +108,6 @@ Testing completed
 ### Тестові набори та утиліти
 ```lisp
 (defun run-iterative-shell-sort-tests ()
-  "Run a series of updated tests for iterative-shell-sort."
   (format t "Start testing iterative-shell-sort function~%")
   (verify-iterative-shell-sort "Test 1" '(100 20 0 50 80 10 30) '(0 10 20 30 50 80 100))
   (verify-iterative-shell-sort "Test 2" '(7 7 7 7 7) '(7 7 7 7 7)) 
