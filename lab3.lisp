@@ -29,7 +29,6 @@
             test-name expected result)))
 
 (defun test-shell-sort ()
-  "Run a series of tests for shell-sort-wrapper."
   (format t "Start testing shell-sort-wrapper function~%")
   (check-shell-sort "Test 1" '(5 3 8 6 2 7 4 1) '(1 2 3 4 5 6 7 8))
   (check-shell-sort "Test 2" '(10 9 8 7 6 5 4 3 2 1) '(1 2 3 4 5 6 7 8 9 10))
@@ -40,7 +39,6 @@
   (format t "Testing completed~%"))
 
 (defun iterative-shell-sort (lst)
-  "Sorts a list using an iterative implementation of Shell sort."
   (let ((working-list (copy-list lst))
         (gap (floor (/ (length lst) 2))))
     (loop while (>= gap 1) do
@@ -55,14 +53,12 @@
     working-list))
 
 (defun verify-iterative-shell-sort (test-name input expected)
-  "Execute iterative-shell-sort on input, compare result with expected and print comparison status."
   (let ((result (iterative-shell-sort input)))
     (format t "~:[~a FAILED! Expected: ~a Obtained: ~a~;~a PASSED! Expected: ~a Obtained: ~a~]~%"
             (equal result expected)
             test-name expected result)))
 
 (defun run-iterative-shell-sort-tests ()
-  "Run a series of updated tests for iterative-shell-sort."
   (format t "Start testing iterative-shell-sort function~%")
   (verify-iterative-shell-sort "Test 1" '(100 20 0 50 80 10 30) '(0 10 20 30 50 80 100))
   (verify-iterative-shell-sort "Test 2" '(7 7 7 7 7) '(7 7 7 7 7)) 
